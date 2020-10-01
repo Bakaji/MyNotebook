@@ -1,0 +1,150 @@
+@import "fonts";
+@import "palette";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $secondary_font;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6,label {
+  font-family: $main_font;
+  color: $primary_color;
+}
+p{
+  text-wrap: everywhere;
+}
+a {
+  text-decoration: none;
+  color: $primary_color;
+  cursor: pointer;
+}
+
+#r-view{
+  margin: 0 30px;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+
+  font-weight: bold;
+  font-size: 16px;
+
+  background-color: $background_color;
+  color: $primary_color;
+
+  border-bottom: 0.5px solid $light_background_color;
+}
+
+input, select,textarea {
+  border: 0;
+  height: 30px;
+  outline: 0;
+  background-color: $light_background_color;
+  &:focus, &:hover {
+    border-bottom: 0.5px solid $primary_color;
+  }
+}
+textarea{
+  height: initial;
+}
+button, input[type='submit'] {
+  background-color: $primary_color;
+  color: $background_color;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  max-width: 200px;
+  &:hover {
+    background-color: $secondary_color;
+  }
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.flex-from-start {
+  justify-content: start;
+}
+
+.z-index-1 {
+  position: relative;
+  z-index: 1
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+
+  #app {
+    height: 100%;
+
+    #r-view {
+      height: calc(100% - 45px);
+    }
+  }
+}
+
+$amount: 10;
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .modal-card {
+    width: 80%;
+    height: 400px;
+    border-radius: 20px;
+    background-color: $background_color;
+    box-sizing: border-box;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.card-background-violet {
+  background: linear-gradient(#8922f0, lighten(#8922f0, $amount));
+}
+
+.card-background-blue {
+  background: linear-gradient($primary_color, lighten($primary_color, $amount));
+}
+
+.card-background-green {
+  background: linear-gradient(#0fb839, lighten(#0fb839, $amount));
+}
+
+.card-background-red {
+  background: linear-gradient(#f20c2f, lighten(#f20c2f, $amount));
+}
+
+.card-background-orange {
+  background: linear-gradient(#ff8e06, lighten(#ff8e06, $amount));
+}
+
+.card-background-yellow {
+  background: linear-gradient(#e6de07, lighten(#e6de07, $amount));
+}
+
